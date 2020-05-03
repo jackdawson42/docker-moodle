@@ -1,6 +1,5 @@
 docker-moodle
 =============
-[![Build Status](https://dev.azure.com/jmhardison/Docker%20Moodle/_apis/build/status/jmhardison.docker-moodle?branchName=master)](https://dev.azure.com/jmhardison/Docker%20Moodle/_build/latest?definitionId=1) [![](https://images.microbadger.com/badges/image/jhardison/moodle.svg)](https://microbadger.com/images/jhardison/moodle "Get your own image badge on microbadger.com")
 
 A Dockerfile that installs and runs the latest Moodle 3.8 stable, with external MySQL Database.
 
@@ -79,5 +78,6 @@ The following aren't handled, considered, or need work:
 
 ## Credits
 
-This is a fork of [Jade Auer's](https://github.com/jda/docker-moodle) Dockerfile.
-This is a reductionist take on [sergiogomez](https://github.com/sergiogomez/)'s docker-moodle Dockerfile.
+This is a fork of [Jonathan Hardison's](https://github.com/jmhardison/docker-moodle) Dockerfile
+which is a fork of [Jade Auer's](https://github.com/jda/docker-moodle) Dockerfile
+which is a reductionist take on [sergiogomez](https://github.com/sergiogomez/)'s docker-moodle Dockerfile.
