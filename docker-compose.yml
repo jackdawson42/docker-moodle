@@ -2,7 +2,7 @@ version: '3'
 
 services:
     dbapp:
-        image: mysql:5
+        image: mariadb:10.4
         restart: always
         volumes:
             - db-volume:/var/lib/mysql
@@ -15,7 +15,7 @@ services:
             restart_policy:
                 condition: any
     moodleapp:
-        image: jhardison/moodle:latest
+        image: deichking/moodle:latest
         links:
             - dbapp:DB
         depends_on: 

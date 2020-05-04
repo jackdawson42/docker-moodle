@@ -1,25 +1,16 @@
 docker-moodle
 =============
 
-A Dockerfile that installs and runs the latest Moodle 3.8 stable, with external MySQL Database.
-
-`Note: DB Deployment uses version 5 of MySQL. MySQL:Latest is now v8.`
+A Dockerfile that installs and runs the latest Moodle 3.8 stable, with external MariaDB Database.
 
 Tags:
 * latest - 3.8 stable
 * v3.8 - 3.8 stable
-* v3.7 - 3.7 stable
-* v3.6 - 3.6 stable
-* v3.5 - 3.5 stable
-* v3.4 - 3.4 stable
-* v3.3 - 3.3 stable
-* v3.2 - 3.2 stable
-* v3.1 - 3.1 stable
 
 ## Installation
 
 ```
-git clone https://github.com/jmhardison/docker-moodle
+git clone https://github.com/deichking/docker-moodle
 cd docker-moodle
 docker build -t moodle .
 ```
@@ -33,8 +24,8 @@ When running locally or for a test deployment, use of localhost is acceptable.
 To spawn a new instance of Moodle:
 
 ```
-docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mysql:5
-docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://localhost:8080 -p 8080:80 jhardison/moodle
+docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mariadb:10.4
+docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://localhost:8080 -p 8080:80 deichking/moodle
 ```
 
 You can visit the following URL in a browser to get started:
@@ -52,15 +43,15 @@ In some cases when you are using an external SSL reverse proxy, you should enabl
 
 * Deploy With Docker
 ```
-docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mysql:5
-docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://moodle.company.com -p 80:80 jhardison/moodle
+docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mariadb:10.4
+docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://moodle.company.com -p 80:80 deichking/moodle
 ```
 
 * Deploy with Docker Compose
 
 Pull the latest source from GitHub:
 ```
-git clone https://github.com/jmhardison/docker-moodle.git
+git clone https://github.com/deichking/docker-moodle.git
 ```
 
 Update the `moodle_variables.env` file with your information. Please note that we are using v3 compose files, as a stop gap link env variable are manually filled since v3 no longer automatically fills those for use.
