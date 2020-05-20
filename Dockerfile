@@ -7,7 +7,7 @@ LABEL maintainer="Deichking <info@deichking.de>"
 
 VOLUME ["/var/moodledata"]
 EXPOSE 80 443
-COPY config-dist.php /var/www/html/config.php
+COPY moodle-config.php /var/www/html/config.php
 
 # Let the container know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
