@@ -25,7 +25,11 @@ ENV MOODLE_URL="http://127.0.0.1" \
     DB_NAME="moodle" \
     DB_USER="moodle" \
     DB_PASSWORD="mySuperSecretP@ssw0rd" \
-    TBL_PREFIX="mdl_"
+    TBL_PREFIX="mdl_" \
+    # PHP settings for file upload
+    POST_MAX_SIZE="256M" \
+    UPLOAD_MAX_FILESIZE="256M" \
+    MAX_EXECUTION_TIME="600"
 
 COPY ./foreground.sh /etc/apache2/foreground.sh
 
