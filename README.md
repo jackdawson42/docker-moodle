@@ -1,10 +1,11 @@
 docker-moodle
 =============
 
-A Dockerfile that installs and runs the latest Moodle 3.8 stable, with external MariaDB Database.
+A Dockerfile that installs and runs the latest Moodle 3.9 stable, with external MariaDB Database.
 
 Tags:
-* latest - 3.8 stable
+* latest - 3.9 stable
+* v3.9 - 3.9 stable
 * v3.8 - 3.8 stable
 
 ## Installation
