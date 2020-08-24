@@ -2,7 +2,7 @@
 # Dockerfile for moodle instance. more dockerish version of https://github.com/sergiogomez/docker-moodle
 # Forked from Jade Auer's docker version. https://github.com/jda/docker-moodle
 # Forked from Jonathan Hardison's docker version. https://github.com/jmhardison/docker-moodle
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="Deichking <info@deichking.de>"
 
 VOLUME ["/var/moodledata"]
@@ -42,7 +42,7 @@ RUN apt-get update && \
     locale-gen en_US.UTF-8 && \
     locale-gen de_DE.UTF-8 && \
     cd /tmp && \
-    git clone -b MOODLE_38_STABLE git://git.moodle.org/moodle.git --depth=1 && \
+    git clone -b MOODLE_39_STABLE git://git.moodle.org/moodle.git --depth=1 && \
     mv /tmp/moodle/* /var/www/html/ && \
     rm /var/www/html/index.html && \
     chown -R www-data:www-data /var/www/html && \
