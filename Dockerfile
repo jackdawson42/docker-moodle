@@ -42,7 +42,7 @@ RUN apt-get update && \
     locale-gen en_US.UTF-8 && \
     locale-gen de_DE.UTF-8 && \
     cd /tmp && \
-    git clone -b MOODLE_38_STABLE git://git.moodle.org/moodle.git --depth=1 && \
+    git clone -b MOODLE_39_STABLE git://git.moodle.org/moodle.git --depth=1 && \
     mv /tmp/moodle/* /var/www/html/ && \
     rm /var/www/html/index.html && \
     chown -R www-data:www-data /var/www/html && \
