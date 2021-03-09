@@ -2,7 +2,7 @@ version: '3'
 
 services:
     dbapp:
-        image: mariadb:10.4
+        image: mariadb:10.5
         restart: always
         volumes:
             - db-volume:/var/lib/mysql
