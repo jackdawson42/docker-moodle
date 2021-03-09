@@ -1,12 +1,13 @@
 docker-moodle
 =============
 
-A Dockerfile that installs and runs the latest Moodle 3.9 stable, with external MariaDB Database.
+A Dockerfile that installs and runs the latest Moodle 3.10 stable, with external MariaDB Database.
 
 Tags:
-* latest - 3.9 stable
-* v3.9 - 3.9 stable
-* v3.8 - 3.8 stable
+* latest - 3.10.2
+* v3.10  - 3.10.2
+* v3.9   - 3.9.5
+* v3.8   - 3.8.8
 
 ## Installation
 
@@ -25,7 +26,7 @@ When running locally or for a test deployment, use of localhost is acceptable.
 To spawn a new instance of Moodle:
 
 ```
-docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mariadb:10.4
+docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_ROOT_PASSWORD=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle mariadb:10.5
 docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://localhost:8080 -p 8080:80 deichking/moodle
 ```
 
